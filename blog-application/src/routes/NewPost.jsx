@@ -38,5 +38,5 @@ export async function action({ request }) {
     },
   });
 
-  return redirect('/');
+  return redirect("/");
 }
