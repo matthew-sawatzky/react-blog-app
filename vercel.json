@@ -15,9 +15,7 @@
       "dest": "blog-application/$1"
     }
   ],
-  "hooks": {
-    "build": {
-      "command": "cd dummy-backend && npm start && cd ../blog-application && npm run dev"
-    }
+  "build": {
+    "command": "cd dummy-backend && npm install && npm start && cd ../blog-application && npm install && npm run dev"
   }
 }
