@@ -1,0 +1,23 @@
+{
+  "builds": [
+    {
+      "src": "dummy-backend/package.json",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "blog-application/package.json",
+      "use": "@vercel/static-build"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "blog-application/$1"
+    }
+  ],
+  "hooks": {
+    "build": {
+      "command": "cd dummy-backend && npm start && cd ../blog-application && npm run dev"
+    }
+  }
+}
